@@ -24,7 +24,8 @@ config_test:
 configure:
 	( mkdir -p $(SRC_NAME)/build && cd $(SRC_NAME)/build ; \
 	cmake \
-	-DCMAKE_INSTALL_PREFIX=$(STAGEDIR) \
+	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    -DCMAKE_INSTALL_PREFIX=$(STAGEDIR) \
 	-DCMAKE_TOOLCHAIN_FILE=../../cross-mipsel-linux.cmake \
 	-DUSE_SHARED_MBEDTLS_LIBRARY=On \
 	-DUSE_STATIC_MBEDTLS_LIBRARY=Off \
